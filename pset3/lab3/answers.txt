@@ -1,0 +1,22 @@
+sort1 uses: bubble sort
+
+How do you know?: The time for the random and reversed lists to be sorted was similar and approximately the square of the sorted lists' time.
+Also, the difference between sorting 5000, 10000 and 15000 in the three cases follows the rule for bubble sort:
+
+best case: n
+average case: n square
+worst case: n square
+
+sort2 uses: merge sort
+
+How do you know?: The time for sorting the random, reversed and sorted lists was similar, close to the best case of bubble sort, although it
+grows more similarly than the bubble sort. As the growth doesn't reach the order of n square, it's safe to say it's the merge sort.
+
+best case: n log n
+average case: n log n
+worst case: n log n
+
+sort3 uses: selection sort
+
+How do you know?: Similarly to the merge sort, the time for sorting the three cases is similar, although it grows more rapidly than the previous,
+making it safe to say it's the selection sort, of order n square for all cases.
