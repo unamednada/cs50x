@@ -37,16 +37,17 @@ int main(int argc, char *argv[])
 
     uint8_t header[HEADER_SIZE];
     int16_t buffer;
-    uint8_t headerByte;
 
     fread(header, sizeof(uint8_t), HEADER_SIZE, input);
-    for (int i = 0; i < HEADER_SIZE; i++)
-    {
-        printf("%i ", header[i]);
-    }
     fwrite(header, sizeof(uint8_t), HEADER_SIZE, output);
 
     // TODO: Read samples from input file and write updated data to output file
+
+    while (fread(&buffer, sizeof(int16_t), 1, input) == 1)
+    {
+        buffer *= factor;
+        fwrite(&buffer, sizeof(int16_t), 1, output);
+    }
 
     // Close files
     fclose(input);
